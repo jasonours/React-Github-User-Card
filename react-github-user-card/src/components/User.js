@@ -1,5 +1,5 @@
 import React from "react";
-import { UserCard, UserName, UserLogin, UserBio, UserLocation, FollowerHeading, FollowerCard, FollowerLogin, FollowerURL, AllCard } from './Styles';
+import { UserCard, UserName, UserLogin, UserBio, UserLocation, FollowHeading, FollowCard, FollowLogin, FollowURL, AllCard } from './Styles';
 
 const User = (props) => {
     console.log(props)
@@ -14,28 +14,26 @@ const User = (props) => {
             </UserCard>
 
             <div>
-                <FollowerHeading>Followers</FollowerHeading> 
-            </div>            
-
+                <FollowHeading>Followers</FollowHeading> 
+            </div>
             {props.followers.map(follower => (                
-                <FollowerCard key={follower.id}>                                      
+                <FollowCard key={follower.id}>                                      
                     <img src={follower.avatar_url} alt="Follower"/>
-                    <FollowerLogin>{follower.login}</FollowerLogin>
-                    <FollowerURL>{follower.url}</FollowerURL>
-                </FollowerCard>
+                    <FollowLogin>{follower.login}</FollowLogin>
+                    <FollowURL>{follower.url}</FollowURL>
+                </FollowCard>
             ))}
             
-            {/* <div>
-                <FollowerHeading>Following</FollowerHeading> 
+            <div>
+                <FollowHeading>Following</FollowHeading> 
             </div>            
-
-            {props.following.map(follow => (                
-                <FollowerCard>                                      
-                    <img src={follow.avatar_url} alt="Follower"/>
-                    <FollowerLogin>{follow.login}</FollowerLogin>
-                    <FollowerURL>{follow.url}</FollowerURL>
-                </FollowerCard>
-            ))} */}
+            {props.following.map(following => (                
+                <FollowCard key={following.id}>                                      
+                    <img src={following.avatar_url} alt="Follower"/>
+                    <FollowLogin>{following.login}</FollowLogin>
+                    <FollowURL>{following.url}</FollowURL>
+                </FollowCard>
+            ))}    
         </AllCard>
     )
 }

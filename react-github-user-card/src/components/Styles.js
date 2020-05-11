@@ -40,14 +40,14 @@ export const UserLocation = styled.p `
     color: #003049;
 `
 
-export const FollowerHeading = styled.h3 `
+export const FollowHeading = styled.h3 `
     font-size: 28px;
     font-weight: bold;
     margin-top: 40px;
     color: #eae2b7;
 `
 
-export const FollowerCard = styled.div `
+export const FollowCard = styled.div `
     border: 2px solid #eae2b7;
     width: 50%;
     display: flex;
@@ -57,13 +57,13 @@ export const FollowerCard = styled.div `
     background-color: #f77f00;
 `
 
-export const FollowerLogin = styled.p `
+export const FollowLogin = styled.p `
     font-size: 20px;
     font-weight: bold;
     color: #003049;
 `
 
-export const FollowerURL = styled.p `
+export const FollowURL = styled.p `
     font-size: 20px;
     font-weight: bold;
     color: #003049;

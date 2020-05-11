@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import User from './components/User';
 import { Heading } from './components/Styles'
 
@@ -8,23 +8,33 @@ class App extends React.Component {
     super();
     this.state = {
       user: [],
-      followers: []
+      followers: [],
+      following: []
     }
   }
 
   componentDidMount(){
-    axios
-    .get("https://api.github.com/users/jasonours")
-    .then(res => this.setState({user: res.data}))
+    fetch("https://api.github.com/users/jasonours")
+    .then(res => res.json())
+    .then(data => {
+      this.setState({user: data});
+    })
+    .catch(error => console.log(error))
+    console.log(this.state.user);
+    fetch("https://api.github.com/users/jasonours/followers")
+    .then(res2 => res2.json())
+    .then(data => {
+      this.setState({followers: data});
+    })
     .catch(err => console.log(err))
-    axios
-    .get("https://api.github.com/users/jasonours/followers")
-    .then(res => this.setState({followers: res.data}))
+    console.log(this.state.followers);
+    fetch("https://api.github.com/users/jasonours/following")
+    .then(res3 => res3.json())
+    .then(data => {
+      this.setState({following: data});
+    })
     .catch(err => console.log(err))
-    // axios
-    // .get("https://api.github.com/users/jasonours/following")
-    // .then(res => this.setState({following: res.data}))
-    // .catch(err => console.log(err))
+    console.log(this.state.following);
   }
   
   render() {
